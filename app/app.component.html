@@ -1,0 +1,10 @@
+<div *ngFor="let user of users let i = index">
+    <div class="user">
+        {{user.name}}
+        <div *ngIf="user.open; else close" class="icon-lock-open"></div>
+        <ng-template #close>
+            <div class="icon-lock"></div>
+        </ng-template>
+        <div class="icon-cancel cross" (click)="remove(i)"></div>
+    </div>
+</div>
